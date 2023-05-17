@@ -229,30 +229,68 @@ for i in range(3):
    r = resultado(p)
    print(f"Resultado de la segunda lidia: {r} ({p} puntos)")
 
-   # Celebración del torero en Sevilla
+   # Celebración del torero en Sevilla.. # para laelebración del torero fuera de Sevilla FALTA CAMBIAR CON LOS ARREGLOS NUEVOS
+   """ imagen_abucheado = Image.open("abucheado.jpg") """
+   """ imagen_aplaudido = Image.open("aplaudido.jpg") """
+   """ imagen_grande = Image.open("grande.jpg") """
+   """ imagen_principe = Image.open("principe.jpg") """
+   """ imagen_hotel = Image.open("hotel.jpg") """
    print("")
    if p1 + p2 <= 0 and p1 <5 and p2 <5:
      print(f"\tEl torero se marcha abucheado por parte del público.")
+     """ imagen_abucheado.show() """
    if (5 <= p1 + p2 <= 9 and (p1 <9 or p2 <9)) or (p1 >5 and p2 <5 or p2 >5 and p1 <5):
      print(f"\tEl torero se despide aplaudido por el público.")
+     """ imagen_aplaudido.show() """
    if (10 <= p1 + p2 <= 15 and p1 >= 5 and p2 >= 5) or (p1 >= 9 and p2 <= 4) or (p2 >=9 and p1 <= 4): #las dos finales son por la puerta del principe de sevilla
     print(f"\tEl torero {toreros[i]} sale a hombros por la Puerta Grande.") #toreros[i] cuando no sean elegidos
+    """ imagen_grande.show() """
    if ((p1 >= 9 and p2 >= 5) or (p2 >= 9 and p1 >= 5)): #ambos han de tener mínimo 5, osea una oreja
     print(f"\tEl torero {toreros[i]} sale a hombros por la Puerta del Príncipe.")
+    """ imagen_principe.show() """
    if p1 + p2 >= 18 or p1 >= 14 or p2 >= 14: # 14 o lo que marque las dos orejas y el rabo
      print(f"\t¡El torero {toreros[i]} es llevado a hombros al hotel!")
+     """ imagen_hotel.show() """
    else:
      print("")
 
-     """ # Celebración del torero fuera de Sevilla. FALTA CAMBIAR CON LOS ARREGLOS NUEVOS
-   print("")
-   if 5 <= p1 + p2 <= 9:
-     print(f"El torero se despide aplaudido por el público.")
-   elif 10 <= p1 + p2 <= 35 and p1 >= 5 and p2 >= 5 or p1 >= 9 or p2 >= 9 #revisar
-    print(f"El torero {toreros[i]} sale a hombros por la Puerta Grande.") #toreros[i] cuando no sean elegidos
-   if p1 + p2 >= 18 or p1 >= 14 or p2 >= 14: # 14 o lo que marque las dos orejas y el rabo
-     print(f"¡El torero {toreros[i]} es llevado a hombros a su hotel!")
-   else:
-     print("") """
 
-     #hacer corridas en otros sitios que no sean Sevilla y luego en Sevilla jejeje
+#HAY QUE PASAR """ TODO """ A UN JUPYTER NOTEBOOKS TROLL!!!!
+#TESTING
+""" import pandas as pd
+
+# Lista que contendrá los resultados de cada enfrentamiento
+resultados = []
+
+# Simulamos 10 enfrentamientos
+for i in range(10):
+    # Creamos un objeto Torero y un objeto Toro aleatorios
+    torero = Torero("Torero" + str(i+1), random.randint(1, 10), random.randint(1, 10), random.randint(-2, 2), random.randint(-2, 2))
+    toro = Toro("Toro" + str(i+1), random.randint(1, 10), random.randint(1, 10), random.randint(500, 630), random.randint(1, 10))
+
+    # Simulamos el enfrentamiento y guardamos la puntuación y el resultado
+    p = puntuacion(torero, toro)
+    r = resultado(p)
+
+    # Simulamos el factor externo y lo sumamos a la puntuación
+    f, fp = factor_externo()
+    p += fp
+
+    # Simulamos el tercio de varas y sumamos la puntuación
+    v, vp = tercio_de_varas(toro)
+    p += vp
+
+    # Creamos un diccionario con los resultados del enfrentamiento
+    d = {'Torero': torero.nombre, 'Valor': torero.valor, 'Arte': torero.arte, 'Condición': torero.condición, 
+         'Suerte': torero.suerte, 'Toro': toro.nombre, 'Bravura': toro.bravura, 'Nobleza': toro.nobleza, 
+         'Peso': toro.peso, 'Hechura': toro.hechura, 'Puntuación': p, 'Resultado': r, 'Factor externo': f,
+         'Varas': v}
+
+    # Añadimos el diccionario a la lista de resultados
+    resultados.append(d)
+
+# Creamos un dataframe a partir de la lista de resultados
+df = pd.DataFrame(resultados)
+
+# Mostramos el dataframe
+print(df) """
